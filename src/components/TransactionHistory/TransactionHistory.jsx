@@ -1,7 +1,9 @@
+import cl from './transactionHistory.module.css'
+
 const TransactionHistory = ({ items }) => {
     return (
-        <table class="transaction-history">
-            <thead>
+        <table className={cl.transaction}>
+            <thead className={cl.headtable}>
                 <tr>
                     <th>Type</th>
                     <th>Amount</th>
@@ -10,7 +12,7 @@ const TransactionHistory = ({ items }) => {
             </thead>
             <tbody>
             {items.map(({ id, type, amount, currency }) => {
-                return <tr key={id}>
+                return <tr key={id}  className={cl.bodytable}>
                             <td>{type}</td>
                             <td>{amount}</td>
                             <td>{currency}</td>
