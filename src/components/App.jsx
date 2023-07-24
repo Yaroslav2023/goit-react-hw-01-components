@@ -1,6 +1,8 @@
 import user from 'assets/user.json';
+import data from 'assets/data.json';
 import PropTypes from 'prop-types';
 import Profile from './Profile';
+import Statistics from './Statistics';
 
 const App = () => {
   return (
@@ -11,6 +13,10 @@ const App = () => {
         location={user.location}
         avatar={user.avatar}
         stats={user.stats}
+      />
+      <Statistics
+        title="Upload stats"
+        stats={data}
       />
     </div>
   );
@@ -23,6 +29,11 @@ Profile.propTypes = {
   avatar: PropTypes.string.isRequired,
   stats: PropTypes.object.isRequired,
  
+}
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default App;
