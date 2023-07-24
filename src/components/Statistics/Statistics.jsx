@@ -1,12 +1,14 @@
+import cl from './statistics.module.css'
+
 const Statistics = ({ title, stats }) => {
     return (
-    <section class="statistics">
-        <h2 class="title">Upload stats</h2>
-        <ul class="stat-list">
+    <section className={cl.statistics}>
+        <h2 className={cl.title}>Upload stats</h2>
+        <ul className={cl.lists}>
             {stats.map(({ id, label, percentage }) => {
-                return <li key={id} class="item">
-                    <span class="label">{label}</span>
-                    <span class="percentage">{percentage}%</span>
+                return <li key={id} className={cl.item}>
+                    <span className="label">{label}</span>
+                    <span className="percentage">{percentage}%</span>
                         </li>
                         })}
         </ul>

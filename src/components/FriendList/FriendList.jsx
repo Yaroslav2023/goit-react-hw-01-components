@@ -1,11 +1,15 @@
+import cl from './friendList.module.css'
+
 const FriendList = ({ friends }) => {
     return (
-        <ul class="friend-list">
+        <ul className={cl.list}>
             {friends.map(({ avatar, name, isOnline, id }) => {
-                return <li key={id} class="item">
-                            <span class="status">{isOnline}</span>
-                            <img class="avatar" src={avatar} alt="User avatar" width="48" />
-                            <p class="name">{name}</p>
+                return <li key={id} className={cl.item}>
+                    <span className={
+                        isOnline ? `${cl.online}` : `${cl.offline}`
+                            }></span>
+                            <img className="avatar" src={avatar} alt="User avatar" width="48" />
+                            <p className="name">{name}</p>
                         </li>
                         })}
         </ul>
