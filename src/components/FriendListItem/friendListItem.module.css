@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+.item {
+
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    padding: 5px 15px;
+
+    background-color: white;
+    border: 1px solid;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.online {
+    width: 25px;
+    height: 25px;
+    background-color: green;
+    border-radius: 100%;
+}
+
+.offline {
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    border-radius: 100%;
+}

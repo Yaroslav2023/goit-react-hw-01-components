@@ -1,21 +1,29 @@
 import cl from './friendList.module.css'
+import FriendListItem from '../FriendListItem';
+import PropTypes from 'prop-types';
 
 const FriendList = ({ friends }) => {
     return (
         <ul className={cl.list}>
-            {friends.map(({ avatar, name, isOnline, id }) => {
-                return <li key={id} className={cl.item}>
-                    <span className={
-                        isOnline ? `${cl.online}` : `${cl.offline}`
-                            }></span>
-                            <img className="avatar" src={avatar} alt="User avatar" width="48" />
-                            <p className="name">{name}</p>
-                        </li>
-                        })}
+            {friends.map(({ avatar, name, isOnline, id}) => {
+                return <FriendListItem 
+                key={id}
+                avatar={avatar}
+                name={name}
+                isOnline={isOnline}
+            />})}  
         </ul>
             
     
   );
 };
+
+FriendListItem.prototype = {
+    key: PropTypes.number.isRequired,
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    isOnline: PropTypes.bool.isRequired,
+}
+
 
 export default FriendList;

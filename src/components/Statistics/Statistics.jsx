@@ -3,7 +3,7 @@ import cl from './statistics.module.css'
 const Statistics = ({ title, stats }) => {
     return (
     <section className={cl.statistics}>
-        <h2 className={cl.title}>Upload stats</h2>
+        {title && <h2 className={cl.title}>{title}</h2>}    
         <ul className={cl.lists}>
             {stats.map(({ id, label, percentage }) => {
                 return <li key={id} className={cl.item}>
