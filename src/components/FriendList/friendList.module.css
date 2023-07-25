@@ -32,17 +32,3 @@
     border: 1px solid;
     box-shadow: 2px 2px 2px gray;
 }
-
-.online {
-    width: 25px;
-    height: 25px;
-    background-color: green;
-    border-radius: 100%;
-}
-
-.offline {
-    width: 25px;
-    height: 25px;
-    background-color: red;
-    border-radius: 100%;
-}

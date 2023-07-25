@@ -1,4 +1,5 @@
-import cl from './transactionHistory.module.css'
+import cl from './transactionHistory.module.css';
+import PropTypes from 'prop-types';
 
 const TransactionHistory = ({ items }) => {
     return (
@@ -20,6 +21,11 @@ const TransactionHistory = ({ items }) => {
             })}
             </tbody>    
         </table>
-);};
+    );
+};
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+}
 
 export default TransactionHistory;

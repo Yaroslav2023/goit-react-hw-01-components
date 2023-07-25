@@ -5,25 +5,19 @@ import PropTypes from 'prop-types';
 const FriendList = ({ friends }) => {
     return (
         <ul className={cl.list}>
-            {friends.map(({ avatar, name, isOnline, id}) => {
-                return <FriendListItem 
-                key={id}
+            {friends.map(({ id, avatar, name, isOnline }) => {
+               return (<li key={id} className={cl.item}>
+                <FriendListItem 
                 avatar={avatar}
                 name={name}
                 isOnline={isOnline}
-            />})}  
-        </ul>
-            
-    
-  );
+            /></li>)
+                })}  
+        </ul>);
 };
 
-FriendListItem.prototype = {
-    key: PropTypes.number.isRequired,
-    avatar: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    isOnline: PropTypes.bool.isRequired,
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
-
 
 export default FriendList;
